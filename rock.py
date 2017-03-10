@@ -73,10 +73,15 @@ if __name__ == '__main__':
     				d = json.load(json_data)
     				if(d):
 					print("json not empty")
+					color = d[0]['color']
+					print("Color: " + str(color))
 					if(pulsing == False):
 						print("starting pulse")
 						proc_led.terminate()
-						proc_led = Popen(['python','/home/pi/Downloads/rpi_ws281x/python/examples/glow_pulse.py','pulse'],stdout = PIPE, stderr = STDOUT)
+						if(color==2):
+							proc_led = Popen(['python','/home/pi/Downloads/rpi_ws281x/python/examples/glow_pulse.py','holiday'],stdout = PIPE, stderr = STDOUT)
+						else:
+							proc_led = Popen(['python','/home/pi/Downloads/rpi_ws281x/python/examples/glow_pulse.py','pulse'],stdout = PIPE, stderr = STDOUT)
 						pulsing = True
 				else:
 					print("JSON empty")
