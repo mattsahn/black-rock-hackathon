@@ -109,7 +109,7 @@ if __name__ == '__main__':
                         proc_led.terminate()
 			proc_led_off = Popen(['python','/home/pi/Downloads/rpi_ws281x/python/examples/turnoff.py','pulse'],stdout = PIPE, stderr = STDOUT)
 			proc_led_off.wait()
-			time.sleep(1)
+			#time.sleep(1)
 			proc_led = Popen(['python','/home/pi/Downloads/rpi_ws281x/python/examples/glow_pulse.py','rainbow'],stdout = PIPE, stderr = STDOUT)
                         
 			print("done with button press section. back to waiting")

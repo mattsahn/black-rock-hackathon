@@ -50,7 +50,7 @@ def wheel(pos):
 		pos -= 170
 		return Color(0, pos * 3, 255 - pos * 3)
 
-def rainbow(strip, wait_ms=100, iterations=1):
+def rainbow(strip, wait_ms=75, iterations=1):
 	"""Draw rainbow that fades across all pixels at once."""
 	for j in range(256*iterations):
 		for i in range(strip.numPixels()):
@@ -58,7 +58,7 @@ def rainbow(strip, wait_ms=100, iterations=1):
 		strip.show()
 		time.sleep(wait_ms/1000.0)
 
-def pulse(strip, wait_ms=7, iterations=1):
+def pulse(strip, wait_ms=6, iterations=1):
 	"""Draw rainbow that fades across all pixels at once."""
 	for i in range(strip.numPixels()):
 		strip.setPixelColor(i, 255)

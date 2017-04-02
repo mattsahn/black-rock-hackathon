@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd /home/pi/dev/black-rock
-sudo python rock.py
+sudo python rock.py > /home/pi/logs/rock.log 2>&1
 
 
 #while true
